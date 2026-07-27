@@ -1,0 +1,55 @@
+{
+  "brand": {
+    "business_name": "Sarah Bell Lane Home Loans",
+    "professional_name": "Sarah Bell Lane",
+    "tagline": "Mortgage Guidance Backed by 30 Years of Experience",
+    "company_affiliation": "Preferred Funding Inc."
+  },
+  "contact": {
+    "phone_display": "[PHONE NUMBER]",
+    "phone_link": "[PHONE NUMBER DIGITS]",
+    "email": "[EMAIL ADDRESS]",
+    "business_hours": "[BUSINESS HOURS]",
+    "office_address": "[OFFICE ADDRESS OR REMOVE]",
+    "service_area": "[CITY, REGION, AND STATES SERVED]"
+  },
+  "licensing": {
+    "individual_nmls": "[SARAH NMLS NUMBER]",
+    "company_nmls": "[PREFERRED FUNDING NMLS NUMBER]",
+    "state_licenses": "[STATE LICENSE INFORMATION]",
+    "equal_housing_text": "Equal Housing Opportunity"
+  },
+  "application": {
+    "application_url": "https://www.preferredfundinginc.com/applications",
+    "application_button_text": "Apply Now"
+  },
+  "forms": {
+    "contact_form_endpoint": "[FORM ENDPOINT — e.g. https://formsubmit.co/your@email.com]",
+    "recipient_email": "[FORM RECIPIENT EMAIL]"
+  },
+  "social": {
+    "facebook": "[FACEBOOK URL]",
+    "instagram": "[INSTAGRAM URL]",
+    "linkedin": "[LINKEDIN URL]"
+  },
+  "analytics": {
+    "google_analytics_id": "[GA4 ID — e.g. G-XXXXXXXXXX]",
+    "search_console_verification": "[SEARCH CONSOLE META TAG CONTENT]"
+  },
+  "website": {
+    "domain": "[FINAL DOMAIN — e.g. sarahbelllane.com]",
+    "canonical_base_url": "[CANONICAL BASE URL — e.g. https://www.sarahbelllane.com]",
+    "default_social_image": "assets/images/social-share.jpg"
+  },
+  "assets": {
+    "headshot": "assets/images/sarah-bell-lane-headshot.png",
+    "hero_image": "assets/images/hero-home.jpg",
+    "consultation_image": "assets/images/homebuyer-consultation.jpg",
+    "closing_image": "assets/images/closing-day.jpg"
+  },
+  "compliance": {
+    "preferred_funding_disclosure": "[APPROVED DISCLOSURE TEXT — obtain from Preferred Funding compliance department]",
+    "state_specific_disclosures": "[STATE-SPECIFIC DISCLOSURES — obtain from licensed attorney or compliance team]",
+    "legal_review_completed": false
+  }
+}
