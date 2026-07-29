@@ -1,6 +1,6 @@
-{
+﻿{
   "brand": {
-    "business_name": "Sarah Bell Lane Home Loans",
+    "business_name": "Sarah Bell Lane Mortgage",
     "professional_name": "Sarah Bell Lane",
     "tagline": "Mortgage Guidance Backed by 30 Years of Experience",
     "company_affiliation": "Preferred Funding Inc."
@@ -14,7 +14,7 @@
     "service_area": "[CITY, REGION, AND STATES SERVED]"
   },
   "licensing": {
-    "individual_nmls": "[SARAH NMLS NUMBER]",
+    "individual_nmls": "185404",
     "company_nmls": "[PREFERRED FUNDING NMLS NUMBER]",
     "state_licenses": "[STATE LICENSE INFORMATION]",
     "equal_housing_text": "Equal Housing Opportunity"

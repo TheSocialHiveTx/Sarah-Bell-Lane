@@ -1,28 +1,31 @@
 /* =====================================================
-   SARAH BELL LANE HOME LOANS
+   SARAH BELL LANE MORTGAGE
    Stylesheet: assets/css/styles.css
-   Version: 1.0
+   Version: 1.1
    ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* =====================================================
    1. CSS CUSTOM PROPERTIES
    ===================================================== */
 :root {
   /* Color Palette */
-  --color-primary-navy:   #17324D;
-  --color-deep-navy:      #102438;
-  --color-warm-gold:      #C79A45;
-  --color-soft-gold:      #E8D7B3;
-  --color-warm-white:     #FAF8F4;
+  --color-primary-navy:   #131C24;
+  --color-deep-navy:      #0B1117;
+  --color-warm-gold:      #C5A059;
+  --color-soft-gold:      #FAF0EB; /* Blush Peach background */
+  --color-warm-white:     #FDF6F3; /* Very soft light warm cream background */
   --color-white:          #FFFFFF;
-  --color-charcoal:       #252B31;
-  --color-muted-gray:     #67727D;
-  --color-light-gray:     #E8EDF1;
+  --color-charcoal:       #2A2E33;
+  --color-muted-gray:     #6F7883;
+  --color-light-gray:     #EADCD4; /* Warm beige borders/lines */
   --color-success:        #365F4B;
 
   /* Typography */
   --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body:    "Inter", Arial, Helvetica, sans-serif;
+  --font-logo:    "Great Vibes", "Playfair Display", serif;
 
   /* Font Scale */
   --text-xs:   0.75rem;
@@ -304,19 +307,21 @@ blockquote {
 }
 
 .site-logo .logo-name {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-primary-navy);
+  font-family: var(--font-logo);
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--color-warm-gold);
+  text-transform: none;
 }
 
 .site-logo .logo-sub {
   font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-warm-gold);
+  margin-top: -0.45rem;
 }
 
 /* Desktop Nav */
@@ -1262,21 +1267,25 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 }
 
 .footer-brand .logo-name {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  color: var(--color-white);
+  font-family: var(--font-logo);
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--color-warm-gold);
   display: block;
   margin-bottom: var(--space-1);
+  text-transform: none;
 }
 
 .footer-brand .logo-sub {
-  font-size: var(--text-xs);
-  letter-spacing: 0.12em;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-warm-gold);
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
   display: block;
   margin-bottom: var(--space-5);
+  margin-top: -0.45rem;
 }
 
 .footer-brand > p {

@@ -1,7 +1,7 @@
 /* =====================================================
-   SARAH BELL LANE HOME LOANS
+   SARAH BELL LANE MORTGAGE
    JavaScript: assets/js/main.js
-   Version: 1.0
+   Version: 1.1
    ===================================================== */
 
 (function () {
