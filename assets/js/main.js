@@ -133,6 +133,36 @@
   function initReveal() {
     var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // 1. Automatically register scroll-reveal classes and staggered transitions on components
+    var grids = document.querySelectorAll('.grid-2, .grid-3, .grid-4, .process-timeline, .checklist, .glossary-grid');
+    grids.forEach(function (grid) {
+      var children = grid.children;
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (
+          child.classList.contains('card') ||
+          child.classList.contains('process-step') ||
+          child.classList.contains('checklist-item') ||
+          child.tagName === 'DIV' ||
+          child.tagName === 'LI'
+        ) {
+          child.classList.add('reveal');
+          if (!prefersReduced) {
+            child.style.transitionDelay = (i * 80) + 'ms';
+          }
+        }
+      }
+    });
+
+    // Animate section headers, hero texts, forms, and callout blocks
+    var elements = document.querySelectorAll(
+      '.section-header, .callout, .hero-content, .hero-media, .about-portrait-col, .about-text-col, .contact-grid > div, .faq-accordion, .disclosure-box, .program-detail, .page-header'
+    );
+    elements.forEach(function (el) {
+      el.classList.add('reveal');
+    });
+
+    // 2. Bypass animations if motion settings are set to reduce
     if (prefersReduced) {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('is-visible');
@@ -140,6 +170,7 @@
       return;
     }
 
+    // 3. Fallback for older browsers
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('is-visible');
@@ -147,6 +178,7 @@
       return;
     }
 
+    // 4. Initialize observer
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -154,7 +186,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
     document.querySelectorAll('.reveal').forEach(function (el) {
       observer.observe(el);
@@ -341,9 +373,58 @@
   }
 
   /* =====================================================
+     PAGE TRANSITIONS (Fade in/out on page switch)
+     ===================================================== */
+  function initPageTransitions() {
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Create the overlay container dynamically so HTML pages remain unchanged
+    var overlay = document.createElement('div');
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay);
+
+    // Fade out overlay on load
+    requestAnimationFrame(function () {
+      overlay.classList.add('fade-out');
+    });
+
+    // Intercept clicks on local HTML links
+    document.addEventListener('click', function (e) {
+      var targetLink = e.target.closest('a');
+      if (!targetLink) return;
+
+      var href = targetLink.getAttribute('href');
+      if (!href) return;
+
+      // Filter: must be a local relative HTML navigation link
+      var isLocalLink = href.indexOf('.html') !== -1 || href.startsWith('/') || (!href.startsWith('http') && !href.startsWith('tel:') && !href.startsWith('mailto:') && !href.startsWith('#'));
+      var isBlank = targetLink.getAttribute('target') === '_blank';
+      var isExternalNotice = targetLink.hasAttribute('data-external-confirm');
+
+      // Detect anchor link to the current page
+      var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      var targetPath = href.split('#')[0].split('/').pop() || '';
+      if (targetPath === '') targetPath = 'index.html';
+      var isCurrentPageAnchor = (currentPath === targetPath || href.startsWith('#')) && href.indexOf('#') !== -1;
+
+      if (isLocalLink && !isBlank && !isExternalNotice && !isCurrentPageAnchor) {
+        e.preventDefault();
+        overlay.classList.remove('fade-out');
+        overlay.classList.add('fade-in');
+
+        setTimeout(function () {
+          window.location.href = href;
+        }, 400); // Must match transition duration in CSS (0.4s)
+      }
+    });
+  }
+
+  /* =====================================================
      INIT
      ===================================================== */
   function init() {
+    initPageTransitions();
     setCurrentYear();
     initStickyHeader();
     initMobileNav();
