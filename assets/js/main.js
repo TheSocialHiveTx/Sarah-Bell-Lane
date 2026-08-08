@@ -313,19 +313,45 @@
         return;
       }
 
-      /* 
-        PRODUCTION NOTE:
-        Set the form's action attribute to your FormSubmit/Formspree/Basin endpoint
-        and remove the e.preventDefault() call above to allow real submission.
-        Example: <form action="https://formsubmit.co/your@email.com" method="POST">
-      */
-
-      /* Development: show success message */
-      if (successMsg) {
-        successMsg.classList.add('is-visible');
-        successMsg.focus();
+      // Show loading state
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
       }
-      if (formWrapper) formWrapper.style.display = 'none';
+
+      // AJAX form submission
+      var formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(function (response) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        if (response.ok) {
+          if (successMsg) {
+            successMsg.classList.add('is-visible');
+            successMsg.focus();
+          }
+          if (formWrapper) formWrapper.style.display = 'none';
+        } else {
+          alert('There was a problem submitting your form. Please try again.');
+        }
+      })
+      .catch(function (error) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        alert('There was a problem submitting your form. Please try again.');
+      });
     });
   }
 

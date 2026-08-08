@@ -1,22 +1,22 @@
 ﻿{
   "brand": {
-    "business_name": "Sarah Bell Lane Mortgage",
+    "business_name": "Sarah Bell Lane Mortgages",
     "professional_name": "Sarah Bell Lane",
     "tagline": "Mortgage Guidance Backed by 30 Years of Experience",
-    "company_affiliation": "Preferred Funding Inc."
+    "company_affiliation": "Preferred Funding, LLC"
   },
   "contact": {
-    "phone_display": "[PHONE NUMBER]",
-    "phone_link": "[PHONE NUMBER DIGITS]",
-    "email": "[EMAIL ADDRESS]",
-    "business_hours": "[BUSINESS HOURS]",
-    "office_address": "[OFFICE ADDRESS OR REMOVE]",
-    "service_area": "[CITY, REGION, AND STATES SERVED]"
+    "phone_display": "225-772-9344",
+    "phone_link": "2257729344",
+    "email": "yourhomeloanbysarah@gmail.com",
+    "business_hours": "Monday – Friday: 9:00 AM – 5:00 PM",
+    "office_address": "15016 N Baylan St, Santa Fe, TX 77517",
+    "service_area": "Santa Fe, TX and surrounding areas"
   },
   "licensing": {
     "individual_nmls": "185404",
-    "company_nmls": "[PREFERRED FUNDING NMLS NUMBER]",
-    "state_licenses": "[STATE LICENSE INFORMATION]",
+    "company_nmls": "1551467",
+    "state_licenses": "Texas (NMLS # 185404)",
     "equal_housing_text": "Equal Housing Opportunity"
   },
   "application": {
@@ -24,21 +24,21 @@
     "application_button_text": "Apply Now"
   },
   "forms": {
-    "contact_form_endpoint": "[FORM ENDPOINT — e.g. https://formsubmit.co/your@email.com]",
-    "recipient_email": "[FORM RECIPIENT EMAIL]"
+    "contact_form_endpoint": "https://formspree.io/f/mrpzbkno",
+    "recipient_email": "yourhomeloanbysarah@gmail.com"
   },
   "social": {
-    "facebook": "[FACEBOOK URL]",
-    "instagram": "[INSTAGRAM URL]",
-    "linkedin": "[LINKEDIN URL]"
+    "facebook": "https://www.facebook.com/yourhomeloanbysarah",
+    "instagram": "https://www.instagram.com/yourhomeloanbysarah",
+    "linkedin": "https://www.linkedin.com"
   },
   "analytics": {
-    "google_analytics_id": "[GA4 ID — e.g. G-XXXXXXXXXX]",
-    "search_console_verification": "[SEARCH CONSOLE META TAG CONTENT]"
+    "google_analytics_id": "",
+    "search_console_verification": ""
   },
   "website": {
-    "domain": "[FINAL DOMAIN — e.g. sarahbelllane.com]",
-    "canonical_base_url": "[CANONICAL BASE URL — e.g. https://www.sarahbelllane.com]",
+    "domain": "yourhomeloanbysarah.com",
+    "canonical_base_url": "https://yourhomeloanbysarah.com",
     "default_social_image": "assets/images/social-share.jpg"
   },
   "assets": {
@@ -48,8 +48,8 @@
     "closing_image": "assets/images/closing-day.jpg"
   },
   "compliance": {
-    "preferred_funding_disclosure": "[APPROVED DISCLOSURE TEXT — obtain from Preferred Funding compliance department]",
-    "state_specific_disclosures": "[STATE-SPECIFIC DISCLOSURES — obtain from licensed attorney or compliance team]",
+    "preferred_funding_disclosure": "Preferred Funding, LLC NMLS # 1551467. NMLS Consumer Access: nmlsconsumeraccess.org. Licensed in Texas.",
+    "state_specific_disclosures": "Texas Savings and Mortgage Lending Complaint Notice: Figure: 7 TAC §80.200(b). Consumers wishing to file a complaint or question should complete a complaint form and send to the Texas Department of Savings and Mortgage Lending.",
     "legal_review_completed": false
   }
 }

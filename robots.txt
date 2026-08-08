@@ -1,8 +1,8 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Disallow admin or sensitive paths (none currently, placeholder)
 # Disallow: /admin/
 
 # Sitemap location — update with your final domain
-Sitemap: https://[FINAL DOMAIN]/sitemap.xml
+Sitemap: https://yourhomeloanbysarah.com/sitemap.xml
