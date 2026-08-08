@@ -2225,17 +2225,17 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   text-align: center;
   box-shadow: inset 4px 0 10px rgba(255,255,255,0.08);
   border-left: 6px solid var(--color-deep-navy);
-  transform-origin: left center !important;
-  transform: rotateY(0deg);
+  transform-origin: right center !important; /* Hinge at the center spine */
+  transform: rotateY(0deg) translateX(0);
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s ease;
-  z-index: 3;
+  z-index: 5;
   backface-visibility: visible;
 }
 
-/* When hovered, the cover opens wide like a door */
+/* When hovered, the cover slides left and hinges open at the spine */
 .guide-book-mock:hover .book-cover {
-  transform: rotateY(-130deg);
-  box-shadow: -10px 15px 30px rgba(13, 37, 63, 0.25);
+  transform: translateX(-100%) rotateY(-25deg);
+  box-shadow: -15px 15px 30px rgba(13, 37, 63, 0.2);
 }
 
 .book-pages {
@@ -2248,7 +2248,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   border-radius: 0 8px 8px 0;
   box-shadow: inset 0 0 12px rgba(13, 37, 63, 0.05), 5px 10px 20px rgba(0,0,0,0.08);
   transform: translateZ(-5px);
-  z-index: 4;
+  z-index: 3;
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
   overflow: hidden;
@@ -2258,7 +2258,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 }
 
 .guide-book-mock:hover .book-pages {
-  transform: translateZ(-2px) rotateY(-12deg);
+  transform: translateZ(-2px) rotateY(-10deg);
   opacity: 1;
 }
 
@@ -2315,14 +2315,6 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   font-size: 2.5rem;
   color: var(--color-warm-gold);
   transition: opacity 0.3s ease;
-}
-
-/* Hide front cover contents when book cover opens to prevent mirrored text */
-.guide-book-mock:hover .book-title,
-.guide-book-mock:hover .book-subtitle,
-.guide-book-mock:hover .book-emblem {
-  opacity: 0;
-  transition-delay: 0s;
 }
 
 .metro-cities {
