@@ -2398,7 +2398,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     transform: none !important;
   }
 
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4, .grid-2-custom { grid-template-columns: 1fr !important; }
   .form-row { grid-template-columns: 1fr; }
 
   .process-timeline {
