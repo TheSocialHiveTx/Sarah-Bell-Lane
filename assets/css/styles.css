@@ -87,6 +87,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -97,6 +98,7 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img {
@@ -414,9 +416,15 @@ blockquote {
   padding: var(--space-6) var(--space-6) calc(var(--space-16) + 70px);
   transform: translateX(100%);
   transition: transform var(--transition-base);
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.mobile-nav.is-open { transform: translateX(0); }
+.mobile-nav.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .mobile-nav-header {
   display: flex;
@@ -547,7 +555,7 @@ blockquote {
   transform: translateY(-2px);
 }
 
-.btn-sm  { padding: 0.5rem 1.5rem; font-size: var(--text-xs); }
+.btn-sm  { padding: 0.65rem 1.5rem; font-size: var(--text-xs); min-height: 44px; }
 .btn-lg  { padding: 1.1rem 2.5rem; font-size: var(--text-base); }
 .btn-block { width: 100%; }
 
@@ -1418,6 +1426,10 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   font-size: var(--text-sm);
   color: rgba(255,255,255,0.65);
   transition: color var(--transition-fast);
+  padding: 0.35rem 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .footer-nav a:hover { color: var(--color-white); }
 
@@ -1952,6 +1964,16 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .contact-grid     { grid-template-columns: 1fr; }
   .glossary-grid    { grid-template-columns: 1fr; }
   .contact-info-card { position: static; }
+
+  /* Prevent tablet overflow from absolute-positioned elements */
+  .boutique-service-box {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: var(--space-6) auto 0;
+    box-shadow: 0 10px 25px rgba(13, 37, 63, 0.05);
+  }
+  .hero-bg-accent { display: none; }
 }
 
 /* =====================================================
@@ -2411,6 +2433,13 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .metric-item:last-child { border-bottom: none; }
   .announcement-bar { font-size: var(--text-xs); }
   .error-code { font-size: 6rem; }
+
+  /* Scale down logo and script text for small phones */
+  .site-logo .logo-name { font-size: 1.8rem; }
+  .script-text { font-size: 1.35em; }
+  .hero-title { font-size: var(--text-xl); }
+  .page-title { font-size: var(--text-2xl); }
+  .section-heading { font-size: var(--text-xl); }
 }
 
 /* =====================================================
